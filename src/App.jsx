@@ -101,7 +101,7 @@ function App() {
         <div className="center-align">
             <audio ref={audioRef} id="beep" preload="auto"
                    src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"/>
-            <h1>Pomodoro click</h1>
+            <h1>25 + 5 Clock</h1>
             <div className="dual-container">
                 <Length title={"break length"}
                         changeTime={changeTime}
