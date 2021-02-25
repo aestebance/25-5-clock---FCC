@@ -1,6 +1,6 @@
 body {
   color: white;
-  background: #333;
+  background: #1e555c;
 }
 
 .dual-container {
@@ -14,7 +14,26 @@ body {
 
 .time-sets {
   display: grid;
-  grid-template-columns: 50px 200px 50px;
+  grid-template-columns: 75px 150px 75px;
   justify-items: center;
   align-items: center;
+}
+.margin-r {
+  margin-right: 20px;
+}
+
+.clock-container {
+  border: 7px solid #13353a;
+  max-width: 400px;
+  margin: 20px auto 10px auto;
+  padding-bottom: 40px;
+  border-radius: 50px;
+}
+
+button {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4)!important;
+}
+
+i {
+  font-size: 30px!important;
 }
