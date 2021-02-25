@@ -7,6 +7,12 @@ function App() {
     const [sessionTime, setSessionTime] = useState(25 * 60);
     const [timeOn, setTimeOn] = useState(false);
     const [onBreak, setOnBreak] = useState(false);
+    const [breakAudio, setBreakAudio] = useState(new Audio("./beep.mp3"));
+
+    const playBreakSound = () => {
+        breakAudio.currentTime = 0;
+        breakAudio.play();
+    };
 
 
     const controlTime = () => {
@@ -19,6 +25,17 @@ function App() {
                 date = new Date().getTime();
                 if (date > nextDate) {
                     setDisplayTime((prev) => {
+                        if (prev <= 0 && !onBreakVariable) {
+                            setOnBreak(true);
+                            onBreakVariable = true;
+                            setOnBreak(true);
+                            return breakTime;
+                        } else if (prev <= 0 && onBreakVariable) {
+                            setOnBreak(true);
+                            onBreakVariable = false;
+                            setOnBreak(true);
+                            return sessionTime;
+                        }
                         return prev - 1;
                     });
                     nextDate += second;
@@ -81,6 +98,7 @@ function App() {
                         formatTime={formatTime}
                 />
             </div>
+            <h3>{onBreak ? "Break" : "Session"}</h3>
             <h1>{formatTime(displayTime)}</h1>
             <button className="btn-large deep-purple lighten-2" onClick={controlTime}>
                 {timeOn ? (
