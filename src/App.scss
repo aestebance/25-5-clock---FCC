@@ -1,0 +1,20 @@
+body {
+  color: white;
+  background: #333;
+}
+
+.dual-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 700px;
+  margin: auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.time-sets {
+  display: grid;
+  grid-template-columns: 50px 200px 50px;
+  justify-items: center;
+  align-items: center;
+}
